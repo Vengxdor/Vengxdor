@@ -1,7 +1,6 @@
 <h1 align="center">Hi 👋, I'm Steven Fernandez</h1>
 <h3 align="center">A passionate self-taught front-end developer. With 1 year of programming experience, I have acquired a solid set of skills in the field of web development. Since I discover web development I have been obsessed with programming, I have dedicated myself to learning autonomously and deepening my knowledge in different web technologies. I'm able to create impressive and dynamic user interfaces, ensuring that the websites that are developed are intuitive and accessible. My goal is to offer modern and elegant web solutions, taking full advantage of the latest technologies available. I work closely with clients to understand their goals and needs, ensuring that their vision becomes a digital reality. I'm excited about the opportunities for growth and development in the field of front-end web development and to collaborate on exciting projects and contribute my skills to make them happen. I look forward to working with you and bringing your ideas to digital life!</h3>
 
-<h3 align="left">Connect with me:</h3>
 <p align="left">
 </p>
 
