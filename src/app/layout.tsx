@@ -17,10 +17,7 @@ export default function RootLayout ({
 }>) {
   return (
     <html className="dark" lang="en">
-      <body className={`${inter.className} bg-background text-text`}>
-        <div className="background absolute inset-0 -z-20 size-full bg-background bg-[size:8rem_10rem]">
-          <div className="background-shadow  absolute inset-0 -z-10"></div>
-        </div>
+      <body className={`${inter.className} `}>
         {children}
         <Toaster richColors/>
       </body>

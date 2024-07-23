@@ -6,14 +6,9 @@ html {
   scroll-behavior: smooth;
 }
 
-.background {
-  --bg-lines-color: #050b21;
-  --bg-lines-width: 3px;
-  background-image:
-      linear-gradient(to right, var(--bg-lines-color) var(--bg-lines-width), transparent 1px),
-    linear-gradient(to bottom, var(--bg-lines-color) var(--bg-lines-width), transparent 1px);
-}
+body {
+  width: 100vw;
+  height: 100vh;
+  background: url('/img-noise-361x370.png') repeat;
 
-.background-shadow {
-  box-shadow: 0 0 300px 50px inset #030818;
 }
