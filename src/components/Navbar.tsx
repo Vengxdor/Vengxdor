@@ -1,52 +1,84 @@
-import { Dock, DockIcon } from '@/components/ui/dock'
-import React from 'react'
-import { TooltipLink } from './Tooltip'
-import { ContactIcon, HammerIcon, HomeIcon, InfoIcon } from './ui/icons'
+'use client'
 
-export type IconProps = React.HTMLAttributes<SVGElement>
+import { useState } from 'react'
+import { FaBars } from 'react-icons/fa'
+
+import { Button } from './ui/button'
 
 export default function Navbar () {
+  const [mobileMenu, setMobileMenu] = useState(false)
+
   return (
-    <div className="pointer-events-none fixed inset-0  flex h-dvh w-dvw items-end">
-      <Dock className="pointer-events-auto z-50 mb-10 bg-zinc-950 backdrop-blur-lg">
-        <DockIcon>
-          <TooltipLink toolText="Home">
-            <a className="flex size-full items-center justify-center" href="#">
-              <HomeIcon className="size-6" />
+    <>
+      <nav className='mx-auto w-11/12 py-8 md:w-10/12 lg:max-w-screen-xl'>
+        <div className='flex items-center justify-between'>
+          <div>
+            <a href='/'>
+              <img
+                width={80}
+                height='auto'
+                src='/logo.webp'
+                alt='The logo of the joint smoke store'
+              />
             </a>
-          </TooltipLink>
-        </DockIcon>
-        <DockIcon>
-          <TooltipLink toolText="About">
-            <a
-              className="flex size-full items-center justify-center"
-              href="#about"
+          </div>
+          <ul className='hidden text-center md:flex md:gap-4'>
+            <li className='text-lg'>
+              <button className='opacity-80 transition-opacity duration-300 hover:opacity-100'>
+                Shop now
+              </button>
+            </li>
+            <li className='text-lg'>
+              <button className='opacity-80 transition-opacity duration-300 hover:opacity-100'>
+                Contact
+              </button>
+            </li>
+            <li className='text-lg'>
+              <a
+                className='opacity-80 transition-opacity duration-300 hover:opacity-100'
+                href='#products'
+              >
+                Products
+              </a>
+            </li>
+          </ul>
+          <div>
+            <button
+              onClick={() => {
+                setMobileMenu(!mobileMenu)
+              }}
+              className='block md:hidden'
             >
-              <InfoIcon className="size-6" />
-            </a>
-          </TooltipLink>
-        </DockIcon>
-        <DockIcon>
-          <TooltipLink toolText="Projects">
-            <a
-              className="flex size-full items-center justify-center"
-              href="#projects"
-            >
-              <HammerIcon className="size-6" />
-            </a>
-          </TooltipLink>
-        </DockIcon>
-        <DockIcon>
-          <TooltipLink toolText="Contact">
-            <a
-              className="flex size-full items-center justify-center"
-              href="#contact"
-            >
-              <ContactIcon className="size-6" />
-            </a>
-          </TooltipLink>
-        </DockIcon>
-      </Dock>
-    </div>
+              <FaBars />
+            </button>
+
+            <Button className='hidden rounded-md md:block'>Shop</Button>
+          </div>
+        </div>
+        {/* mobile */}
+        {!!mobileMenu && (
+          <ul className='mt-4 flex flex-col gap-4 text-center md:hidden '>
+            <li className='text-lg'>
+              <button className='opacity-80 transition-opacity duration-300 hover:opacity-100'>
+                Shop now
+              </button>
+            </li>
+            <li className='text-lg'>
+              <button className='opacity-80 transition-opacity duration-300 hover:opacity-100'>
+                Contact
+              </button>
+            </li>
+            <li className='text-lg'>
+              <a
+                className='opacity-80 transition-opacity duration-300 hover:opacity-100'
+                href='#products'
+              >
+                Products
+              </a>
+            </li>
+          </ul>
+        )}
+      </nav>
+    </>
   )
 }
