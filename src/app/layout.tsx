@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Roboto_Condensed } from 'next/font/google'
 import './globals.css'
 import { Toaster } from 'sonner'
+import { Analytics } from '@vercel/analytics/react'
 
 const inter = Roboto_Condensed({ subsets: ['latin'] })
 
@@ -20,6 +21,7 @@ export default function RootLayout ({
       <body className={`${inter.className} `}>
         {children}
         <Toaster richColors/>
+        <Analytics />
       </body>
     </html>
   )
