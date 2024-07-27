@@ -55,7 +55,7 @@ export default function Navbar () {
                 <Github className='text-3xl opacity-60 transition-opacity duration-200 hover:opacity-100 ' />
               </a>
               {/* Todo: Add resume */}
-              <Button className=''>Resume</Button>
+              <Button className='px-7'>Resume</Button>
             </div>
             <button
               onClick={() => {
