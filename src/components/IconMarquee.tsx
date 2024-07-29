@@ -9,7 +9,7 @@ interface Props {
 const IconMarquee = ({ icons }: Props) => {
   return (
     <div className='w-full pb-10 pt-2'>
-      <div className='mx-auto w-full px-4 md:px-8 lg:w-11/12 xl:w-3/4'>
+      <div className='mx-auto w-full px-4 md:px-8 lg:w-11/12 xl:w-10/12'>
         <div
           className='group relative mt-6 flex gap-20 overflow-hidden p-2'
           style={{
