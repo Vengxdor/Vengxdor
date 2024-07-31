@@ -10,19 +10,15 @@ const inter = Oooh_Baby({ weight: '400', subsets: ['latin'] })
 const navItems = [
   {
     title: 'Home',
-    link: '/'
+    link: '#'
   },
   {
     title: 'Projects',
-    link: '/projects'
-  },
-  {
-    title: 'About',
-    link: '/about'
+    link: '#projects'
   },
   {
     title: 'Contact',
-    link: '/contact'
+    link: '#contact'
   }
 ]
 
@@ -31,7 +27,7 @@ export default function Navbar () {
 
   return (
     <>
-      <nav className='mx-auto w-11/12 py-8 md:w-10/12 lg:max-w-screen-xl'>
+      <nav className='mx-auto w-11/12 py-8 md:w-10/12 lg:max-w-screen-md'>
         <div className='flex items-center justify-between'>
           <h1 className={`${inter.className} text-4xl font-bold`}>Steven</h1>
           <ul className='hidden text-center md:flex md:gap-4'>
@@ -48,7 +44,10 @@ export default function Navbar () {
           </ul>
           <div>
             <div className='hidden items-center gap-3 md:flex'>
-              <a target='_blank' href='https://www.linkedin.com/in/steven-fernandez-11a522274/'>
+              <a
+                target='_blank'
+                href='https://www.linkedin.com/in/steven-fernandez-11a522274/'
+              >
                 <FaLinkedin className='text-3xl opacity-60 transition-opacity duration-200 hover:opacity-100 ' />
               </a>
               <a target='_blank' href='https://github.com/vengxdor'>
@@ -94,9 +93,7 @@ export default function Navbar () {
                   </a>
                 </div>
                 {/* Todo: Add resume */}
-                <Button size='lg'>
-                  Resume
-                </Button>
+                <Button size='lg'>Resume</Button>
               </div>
             </li>
           </ul>
