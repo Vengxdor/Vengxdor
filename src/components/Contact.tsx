@@ -1,20 +1,53 @@
+'use client'
 import React from 'react'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
+import emailjs from '@emailjs/browser'
+import { toast } from 'sonner'
 
 export default function Contact () {
+  const form = React.useRef<HTMLFormElement | null>(null)
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (form.current === null) return
+    emailjs
+      .sendForm('service_ah9jj6s', 'template_m2m3g1s', form.current, {
+        publicKey: 'uBQ5Gsd8pNzmAego1'
+      })
+      .then(
+        () => {
+          toast.success('Email sent!')
+          if (form.current === null) return
+          form.current.reset()
+        }
+      ).catch(
+        () => toast.error('There was an error sending the email')
+      )
+  }
   return (
     <section id='contact' className='mb-10 mt-32 '>
       <h2 className='mb-9 text-center text-subtitle font-bold'>Contact</h2>
       <div className='flex items-center gap-12'>
-        <form className='grid h-72 w-1/2 items-center '>
-          <Input type='text' placeholder='Name'/>
-          <Input type='Email' placeholder='Email'/>
-          <Textarea className='rezize-none h-32' placeholder='Message...'/>
-          <Button className='bg-secondary' type='submit'>Send</Button>
+        <form
+          onSubmit={sendEmail}
+          ref={form}
+          className='grid h-72 w-1/2 items-center '
+        >
+          <Input name='user_name' required type='text' placeholder='Name' />
+          <Input name='user_email' required type='Email' placeholder='Email' />
+          <Textarea
+            required
+            className='rezize-none h-32'
+            placeholder='Message...'
+            name='message'
+          />
+          <Button className='bg-secondary' type='submit'>
+            Send
+          </Button>
         </form>
-        <img className='w-1/3' src="/mail.png" alt="" />
+        <img className='w-1/3' src='/mail.png' alt='' />
       </div>
     </section>
   )
