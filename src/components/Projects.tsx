@@ -10,7 +10,6 @@ interface Project {
   description: string
   link: string
 }
-// todo: add description and alt
 const projects: Project[] = [
   {
     img: {
@@ -29,7 +28,7 @@ const projects: Project[] = [
     },
     title: 'Danny the groomer - Dog grooming shop',
     description:
-      'Page for “Danny the groomer” a local business. I create a page to showcase a lot of their services.',
+      'Danny a dog groomer. I created a page to showcase his work and services with a lot of images.',
     link: 'https://danny-groomer.vercel.app/'
   },
   {
@@ -38,7 +37,7 @@ const projects: Project[] = [
       alt: 'svete library'
     },
     title: 'Svete Library',
-    description: 'A online library',
+    description: 'A test library created to showcase my skills using React and Tailwind.',
     link: 'https://svete-library.vercel.app/'
   }
 ]
