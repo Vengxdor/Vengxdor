@@ -48,7 +48,7 @@ export default function Projects () {
       <h2 className='text-center text-subtitle font-bold'>
         Some recents projects
       </h2>
-      <ul className='mx-auto mt-8 grid w-full md:w-3/4 grid-cols-2 justify-center gap-3'>
+      <ul className='mx-auto mt-8 grid w-full grid-cols-2 justify-center gap-3 md:w-3/4'>
         {projects.map((project, index) => (
           <li
             className='mx-auto mt-5 grid max-w-[435px] justify-center gap-2'
