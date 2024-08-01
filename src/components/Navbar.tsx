@@ -48,9 +48,11 @@ export default function Navbar () {
                 target='_blank'
                 href='https://www.linkedin.com/in/steven-fernandez-11a522274/'
               >
+                <span className='sr-only'>LinkedIn icon</span>
                 <FaLinkedin className='text-3xl opacity-60 transition-opacity duration-200 hover:opacity-100 ' />
               </a>
               <a target='_blank' href='https://github.com/vengxdor'>
+                <span className='sr-only'>github icon</span>
                 <Github className='text-3xl opacity-60 transition-opacity duration-200 hover:opacity-100 ' />
               </a>
               {/* Todo: Add resume */}
