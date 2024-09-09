@@ -37,7 +37,8 @@ const projects: Project[] = [
       alt: 'svete library'
     },
     title: 'Svete Library',
-    description: 'A test library created to showcase my skills using React and Tailwind.',
+    description:
+      'A test library created to showcase my skills using React and Tailwind.',
     link: 'https://svete-library.vercel.app/'
   }
 ]
@@ -48,7 +49,7 @@ export default function Projects () {
       <h2 className='text-center text-subtitle font-bold'>
         Some recents projects
       </h2>
-      <ul className='mx-auto mt-8 grid w-full grid-cols-2 justify-center gap-3 md:w-3/4'>
+      <ul className=' mt-8 grid w-full grid-cols-1 justify-center gap-3 md:grid-cols-2'>
         {projects.map((project, index) => (
           <li
             className='mx-auto mt-5 grid max-w-[435px] justify-center gap-2'

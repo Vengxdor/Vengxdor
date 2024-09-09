@@ -27,7 +27,7 @@ export default function Navbar () {
 
   return (
     <>
-      <nav className='mx-auto w-11/12 py-8 md:w-10/12 lg:max-w-[960px]'>
+      <nav className='mx-auto w-11/12 py-8 md:w-10/12 lg:max-w-[797px]'>
         <div className='flex items-center justify-between'>
           <h1 className={`${inter.className} text-4xl font-bold`}>Steven</h1>
           <ul className='hidden text-center md:flex md:gap-4'>
