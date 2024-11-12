@@ -1,0 +1,114 @@
+---
+import { FaGithub } from 'react-icons/fa'
+import { Button } from './ui/button'
+
+interface Project {
+  img: {
+    src: string
+    alt: string
+  }
+  title: string
+  description: string
+  link: string
+}
+const projects: Project[] = [
+  {
+    img: {
+      src: '/projects/joint.png',
+      alt: 'The Joint - Smoke shop',
+    },
+    title: 'The Joint - Smoke shop',
+    description:
+      'Page for “The Joint”  a local business. With a lot of smoke products I create a page to showcase a large amount of them. ',
+    link: 'https://the-joint-sooty.vercel.app/',
+  },
+  {
+    img: {
+      src: '/projects/danny.png',
+      alt: 'Danny the groomer - Dog grooming shop',
+    },
+    title: 'Danny the groomer - Dog grooming shop',
+    description:
+      'Danny a dog groomer. I created a page to showcase his work and services with a lot of images.',
+    link: 'https://danny-groomer.vercel.app/',
+  },
+  {
+    img: {
+      src: '/projects/library.png',
+      alt: 'svete library',
+    },
+    title: 'Svete Library',
+    description:
+      'A test library created to showcase my skills using React and Tailwind.',
+    link: 'https://svete-library.vercel.app/',
+  },
+]
+---
+
+<section class='my-32' id='projects'>
+  <h2 class='flex items-center gap-3 text-[46px] font-bold'>
+    <svg
+      class='size-12'
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      viewBox='0 0 24 24'
+      stroke-width='2'
+      stroke='currentColor'
+      fill='none'
+      stroke-linecap='round'
+      stroke-linejoin='round'
+    >
+      <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+      <path d='M7 8l-4 4l4 4'></path>
+      <path d='M17 8l4 4l-4 4'></path>
+      <path d='M14 4l-4 16'></path>
+    </svg>
+    Projects
+  </h2>
+  <ul class='mt-8 grid justify-center gap-12'>
+    {
+      projects.map((project) => (
+        <li class='mx-auto mt-5 grid w-full justify-center gap-5 md:flex md:gap-7'>
+          <div class='w-full md:w-1/2'>
+            <img
+              class=' w-full rounded-md md:max-w-[476px]'
+              src={project.img.src}
+              alt={project.img.alt}
+            />
+          </div>
+          <div class='grid size-full md:w-1/2 md:max-w-lg'>
+            <div>
+              <h4 class='mb-4 text-4xl font-bold'>{project.title}</h4>
+              <p class='text-xl opacity-60'>{project.description}</p>
+            </div>
+            <div class='mt-2 flex items-end justify-end gap-2'>
+                <a class='flex gap-1 text-lg items-center p-1 px-4 rounded-md bg-zinc-600' target='_blank' href={project.link}>
+                  <FaGithub />
+                  Code
+                </a>
+                <a class='flex gap-1 text-lg items-center p-1 px-4 rounded-md bg-zinc-600' target='_blank' href={project.link}>
+                  <svg
+                    class='size-4'
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='24'
+                    height='24'
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    stroke='currentColor'
+                    stroke-width='2'
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                  >
+                    <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71' />
+                    <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71' />
+                  </svg>
+                  Preview
+                </a>
+            </div>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</section>
