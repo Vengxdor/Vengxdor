@@ -14,7 +14,7 @@ interface Project {
 const projects: Project[] = [
   {
     img: {
-      src: '/projects/joint.png',
+      src: '/projects/joint.webp',
       alt: 'The Joint - Smoke shop',
     },
     title: 'The Joint - Smoke shop',
@@ -24,7 +24,7 @@ const projects: Project[] = [
   },
   {
     img: {
-      src: '/projects/danny.png',
+      src: '/projects/danny.webp',
       alt: 'Danny the groomer - Dog grooming shop',
     },
     title: 'Danny the groomer - Dog grooming shop',
@@ -34,7 +34,7 @@ const projects: Project[] = [
   },
   {
     img: {
-      src: '/projects/library.png',
+      src: '/projects/library.webp',
       alt: 'svete library',
     },
     title: 'Svete Library',
@@ -72,6 +72,7 @@ const projects: Project[] = [
         <li class='mx-auto mt-5 grid w-full justify-center gap-5 md:flex md:gap-7'>
           <div class='w-full md:w-1/2'>
             <img
+            loading='lazy'
               class=' w-full rounded-md md:max-w-[476px]'
               src={project.img.src}
               alt={project.img.alt}
@@ -83,28 +84,36 @@ const projects: Project[] = [
               <p class='text-xl opacity-60'>{project.description}</p>
             </div>
             <div class='mt-2 flex items-end justify-end gap-2'>
-                <a class='flex gap-1 text-lg items-center p-1 px-4 rounded-md bg-zinc-600' target='_blank' href={project.link}>
-                  <FaGithub />
-                  Code
-                </a>
-                <a class='flex gap-1 text-lg items-center p-1 px-4 rounded-md bg-zinc-600' target='_blank' href={project.link}>
-                  <svg
-                    class='size-4'
-                    xmlns='http://www.w3.org/2000/svg'
-                    width='24'
-                    height='24'
-                    viewBox='0 0 24 24'
-                    fill='none'
-                    stroke='currentColor'
-                    stroke-width='2'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                  >
-                    <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71' />
-                    <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71' />
-                  </svg>
-                  Preview
-                </a>
+              <a
+                class='flex gap-1 text-lg items-center p-1 px-4 rounded-md bg-zinc-600'
+                target='_blank'
+                href={project.link}
+              >
+                <FaGithub />
+                Code
+              </a>
+              <a
+                class='flex gap-1 text-lg items-center p-1 px-4 rounded-md bg-zinc-600'
+                target='_blank'
+                href={project.link}
+              >
+                <svg
+                  class='size-4'
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='24'
+                  height='24'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  stroke-width='2'
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                >
+                  <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71' />
+                  <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71' />
+                </svg>
+                Preview
+              </a>
             </div>
           </div>
         </li>

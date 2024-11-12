@@ -11,7 +11,7 @@ const navItems = [
   },
   {
     title: 'Contact',
-    link: '#contact',
+    link: 'mailto:Fernandezsteven185@gmail.com',
   },
 ]
 
