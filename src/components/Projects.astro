@@ -1,6 +1,5 @@
 ---
 import { FaGithub } from 'react-icons/fa'
-import { Button } from './ui/button'
 
 interface Project {
   img: {
@@ -10,6 +9,7 @@ interface Project {
   title: string
   description: string
   link: string
+  code?: string
 }
 const projects: Project[] = [
   {
@@ -84,16 +84,18 @@ const projects: Project[] = [
               <p class='text-xl opacity-60'>{project.description}</p>
             </div>
             <div class='mt-2 flex items-end justify-end gap-2'>
-              <a
-                class='flex gap-1 text-lg items-center p-1 px-4 rounded-md bg-zinc-600'
+              {project.code && (
+                <a
+                class='flex gap-1 text-lg items-center p-1 px-4 rounded-md border '
                 target='_blank'
                 href={project.link}
-              >
+                >
                 <FaGithub />
                 Code
               </a>
+                )}
               <a
-                class='flex gap-1 text-lg items-center p-1 px-4 rounded-md bg-zinc-600'
+                class='flex gap-1 text-lg items-center p-1 px-4 rounded-md bg-secondary hover:bg-purple-700 transition-colors duration-300'
                 target='_blank'
                 href={project.link}
               >
