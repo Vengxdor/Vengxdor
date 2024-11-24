@@ -36,7 +36,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className='sticky top-5 z-50 my-5 flex w-full justify-center'>
+      <header className='sticky top-5 z-50 py-5 flex w-full justify-center'>
         <nav
           className={`flex justify-center gap-4 rounded-3xl px-6 py-1 backdrop-blur-md transition-colors duration-200 ${
             scrolled
