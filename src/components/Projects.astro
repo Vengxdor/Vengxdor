@@ -1,46 +1,32 @@
 ---
 import { FaGithub } from 'react-icons/fa'
+import Pill from './ui/pill'
+import type { Tech } from '@/components/ui/pill'
 
 interface Project {
-  img: {
-    src: string
-    alt: string
-  }
+  img: string
   title: string
   description: string
   link: string
   code?: string
+  tech?: Tech['tech'][]
 }
 const projects: Project[] = [
   {
-    img: {
-      src: '/projects/joint.webp',
-      alt: 'The Joint - Smoke shop',
-    },
+    img: '/projects/joint.webp',
     title: 'The Joint - Smoke shop',
     description:
-      'Page for “The Joint”  a local business. With a lot of smoke products I create a page to showcase a large amount of them. ',
+      'Landing page for a local business call The joint. A modern landing page designed to showcase the brand and offerings of a premium smoke store. The design combines modern aesthetics with a user-friendly experience to effectively showcase the brand and its offerings.',
     link: 'https://the-joint-sooty.vercel.app/',
+    tech: ['tailwind', 'nextjs'],
   },
   {
-    img: {
-      src: '/projects/danny.webp',
-      alt: 'Danny the groomer - Dog grooming shop',
-    },
-    title: 'Danny the groomer - Dog grooming shop',
+    img: '/projects/budget-buddy.png',
+    title: 'Budget Buddy',
     description:
-      'Danny a dog groomer. I created a page to showcase his work and services with a lot of images.',
-    link: 'https://danny-groomer.vercel.app/',
-  },
-  {
-    img: {
-      src: '/projects/library.webp',
-      alt: 'svete library',
-    },
-    title: 'Svete Library',
-    description:
-      'A test library created to showcase my skills using React and Tailwind.',
-    link: 'https://svete-library.vercel.app/',
+      'Intuitive expense tracker designed to help users monitor and categorize their daily expenses. The platform provides a comprehensive dashboard with clear visualizations to enhance financial awareness and promote better spending habits.',
+    link: 'https://budget-buddy-six.vercel.app/',
+    tech: ['tailwind', 'nextjs', 'firebase'],
   },
 ]
 ---
@@ -72,30 +58,37 @@ const projects: Project[] = [
         <li class='mx-auto mt-5 grid w-full justify-center gap-5 md:flex md:gap-7'>
           <div class='w-full md:w-1/2'>
             <img
-            loading='lazy'
-              class=' w-full rounded-md md:max-w-[476px]'
-              src={project.img.src}
-              alt={project.img.alt}
+              loading='lazy'
+              class='w-full rounded-md md:max-w-[476px]'
+              src={project.img}
+              alt={project.title}
             />
           </div>
           <div class='grid size-full md:w-1/2 md:max-w-lg'>
             <div>
               <h4 class='mb-4 text-4xl font-bold'>{project.title}</h4>
+              {project.tech && (
+                <div class='flex gap-2 py-2'>
+                  {project.tech.map((tech) => (
+                    <Pill tech={tech} />
+                  ))}
+                </div>
+              )}
               <p class='text-xl opacity-60'>{project.description}</p>
             </div>
             <div class='mt-2 flex items-end justify-end gap-2'>
               {project.code && (
                 <a
-                class='flex gap-1 text-lg items-center p-1 px-4 rounded-md border '
-                target='_blank'
-                href={project.link}
+                  class='flex gap-1 text-lg items-center p-1 px-4 rounded-md border'
+                  target='_blank'
+                  href={project.link}
                 >
-                <FaGithub />
-                Code
-              </a>
-                )}
+                  <FaGithub />
+                  Code
+                </a>
+              )}
               <a
-                class='flex gap-1 text-lg items-center p-1 px-4 rounded-md bg-secondary hover:bg-purple-700 transition-colors duration-300'
+                class='flex gap-1 text-lg items-center p-1 px-4 rounded-md bg-secondary hover:bg-purple-800 transition-colors duration-300'
                 target='_blank'
                 href={project.link}
               >
