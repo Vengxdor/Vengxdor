@@ -1,3 +1,6 @@
+---
+import { Image } from "astro:assets";
+---
 <section class='py-20' id='about'>
   <h2 class='mb-6 flex items-center gap-2 text-[44px] font-bold'>
     <svg
@@ -18,12 +21,12 @@
   <article
     class='flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row'
   >
-    <img
+    <Image
       width='320'
       height='320'
       loading='lazy'
       class='order-1 aspect-square h-full w-64 rounded-2xl object-cover object-center p-1 md:order-2 md:w-80 lg:p-2'
-      src='/author2.png'
+      src='/author2.webp'
       alt=''
     />
     <div class='md:w order-1 text-pretty md:w-5/6 [&>p]:mb-4 md:[&>p]:text-lg'>
