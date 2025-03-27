@@ -5,7 +5,7 @@ const techConfig = {
   nextjs: { name: 'Next.js', color: 'black', icon: <Nextjs /> },
   tailwind: { name: 'Tailwind CSS', color: '#003159', icon: <TailwindCSS  className="text-lg"/> },
   firebase: { name: 'Firebase', color: '#cc8400', icon: <Firebase /> },
-  astro: {name: 'Astro', color: 'white', icon: <AstroIcon />}
+  astro: {name: 'Astro', color: '#6416ae', icon: <AstroIcon  className="text-lg"/>}
 }
 
 export type Tech = {

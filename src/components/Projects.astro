@@ -16,9 +16,9 @@ const projects: Project[] = [
     img: '/projects/joint.webp',
     title: 'The Joint - Smoke shop',
     description:
-      'Landing page for a local business call The joint. A modern landing page designed to showcase the brand and offerings of a premium smoke store. The design combines modern aesthetics with a user-friendly experience to effectively showcase the brand and its offerings.',
+      'Landing page for The Joint smoke shop that consistently attracts approximately <b>200 monthly visitors</b> since its launch on August 1, 2024. This sustained traffic represents over <b>1,400 total visitors</b> since launch, providing The Joint with continuous digital visibility in their local market. The design has maintained steady engagement over 7+ months, demonstrating its lasting effectiveness and reliability.',
     link: 'https://the-joint-sooty.vercel.app/',
-    tech: ['tailwind', 'nextjs'],
+    tech: ['tailwind', 'astro'],
   },
   {
     img: '/projects/budget-buddy.webp',
@@ -75,7 +75,7 @@ const projects: Project[] = [
                   ))}
                 </div>
               )}
-              <p class='text-xl opacity-60'>{project.description}</p>
+              <p set:html={project.description} class='opacity-70 font-medium [&>b]:text-accent '></p>
             </div>
             <div class='mt-2 flex items-end justify-end gap-2'>
               {project.code && (
@@ -108,7 +108,7 @@ const projects: Project[] = [
                   <path d='M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71' />
                   <path d='M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71' />
                 </svg>
-                Preview
+                Visit
               </a>
             </div>
           </div>
