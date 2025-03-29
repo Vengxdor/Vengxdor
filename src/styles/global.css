@@ -9,7 +9,8 @@ html {
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
+    --background: 276, 15%, 6%;
+    --background-darker: 274, 17%, 19%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
@@ -65,4 +66,9 @@ html {
   to {
       transform:rotate(360deg);
   }
+}
+
+.full-bleed {
+  box-shadow: 0 0 0 100vmax hsl(var(--background));
+  clip-path: inset(0 -100vmax);
 }

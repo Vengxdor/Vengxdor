@@ -1,0 +1,33 @@
+---
+const navItems = [
+  {
+    title: 'Home',
+    link: '/',
+  },
+  {
+    title: 'Projects',
+    link: '#projects',
+  },
+  {
+    title: 'Contact',
+    link: 'mailto:Fernandezsteven185@gmail.com',
+  },
+]
+---
+<header class='h-16 bg-background backdrop-blur-3xl sticky border-b top-0 z-50 shadow-lg'>
+  <nav
+    class='h-full flex justify-between items-center transition-colors duration-200 mx-auto w-11/12 md:w-10/12 lg:max-w-[900px]'
+  >
+  <p class='text-2xl font-bold text-accent'>Steven Fernandez</p>
+  <div class='flex gap-3'>
+    {navItems.map((item) => (
+      <a
+        href={item.link}
+        class='text-lg transition-opacity duration-300 hover:opacity-80'
+      >
+        {item.title}
+    </a>
+    ))}
+    </div>
+  </nav>
+</header>
