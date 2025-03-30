@@ -22,7 +22,7 @@ import Analytics from '@vercel/analytics/astro'
 		<title>{title}</title>
 	</head>
 	<body>
-		<Header client:load/>
+		<Header />
 		<div class='mx-auto w-11/12 pb-8 md:w-10/12 lg:max-w-[900px]' id="app">
 			<BackgroundBeamsWithCollision className='fixed inset-0 -z-10 bg-background' client:load/>
 			<slot />
