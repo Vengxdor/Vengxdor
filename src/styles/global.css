@@ -9,8 +9,8 @@ html {
 
 @layer base {
   :root {
-    --background: 276, 15%, 6%;
-    --background-darker: 274, 17%, 19%;
+    --background: 283, 47%, 3%;
+    --background-darker: 279, 89%, 4%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
@@ -47,13 +47,6 @@ html {
   }
 }
 
-.full-section {
-  box-shadow: 0 0 0 100vmax hsl(var(--secondary));
-  clip-path: inset(0 -100vmax);
-  background-color: hsl(var(--secondary));
-}
-
-
 .work-border {
   animation: spin 3s linear infinite;
 }
@@ -66,9 +59,4 @@ html {
   to {
       transform:rotate(360deg);
   }
-}
-
-.full-bleed {
-  box-shadow: 0 0 0 100vmax hsl(var(--background));
-  clip-path: inset(0 -100vmax);
 }
