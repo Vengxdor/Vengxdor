@@ -1,14 +1,16 @@
 ---
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { Image } from 'astro:assets';
 ---
 
 <section id='hero' class='my-16 md:my-44 flex flex-col gap-4'>
-  <article class='flex flex-col md:flex-row'>
+  <article class='flex flex-col md:flex-row gap-4'>
     <div class='mb-7 flex min-w-[300px] justify-center md:mb-0'>
-      <img
-        width={240}
-        height={240}
-        class='aspect-square size-60 animate-blurred-fade-in justify-center rounded-full object-cover md:flex'
+      <Image
+        loading='eager'
+        width={400}
+        height={400}
+        class='aspect-square size-60  animate-blurred-fade-in justify-center rounded-full object-cover md:flex border-4 md:size-72 border-secondary'
         src='/author.webp'
         alt='Steven Fernandez'
       />
@@ -16,7 +18,8 @@ import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
     <div class='flex flex-col justify-center'>
       <span class='flex'>
         <a
-          href='#'
+          target='_blank'
+          href='https://www.linkedin.com/in/steven-fernandez-11a522274/'
           class='relative mb-3 flex overflow-hidden rounded-full p-px focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50'
         >
           <span
