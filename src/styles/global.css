@@ -9,31 +9,25 @@ html {
 
 @layer base {
   :root {
-    --background: 283, 47%, 3%;
-    --background-darker: 279, 89%, 4%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 272, 72%, 47%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 271, 91%, 65%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --background: 283 47% 3%;
+    --foreground: 276 28% 93%;
+    --card: 283 47% 3%;
+    --card-foreground: 276 28% 93%;
+    --popover: 283 47% 3%;
+    --popover-foreground: 276 28% 93%;
+    --primary: 277 72% 53%;
+    --primary-foreground: 276 28% 93%;
+    --secondary: 277 80% 35%;
+    --secondary-foreground: 276 28% 93%;
+    --muted: 283 47% 80%;
+    --muted-foreground: 276 28% 93%;
+    --accent: 271 91% 65%;
+    --accent-foreground: 276 28% 93%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 276 29% 10%;
     --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --input: 283 47% 80%;
+    --ring: 308 100% 60%;
     --radius: 0.50rem;
   }
 }
