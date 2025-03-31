@@ -1,65 +1,28 @@
 ---
 import { Image } from "astro:assets";
+import TabsAbout from "./TabsAbout";
 ---
-<section class='py-20' id='about'>
-  <h2 class='mb-6 flex items-center gap-2 text-[44px] font-bold'>
-    <svg
-      class='size-12'
-      xmlns='http://www.w3.org/2000/svg'
-      width='25'
-      height='25'
-      viewBox='0 0 15 15'
-    >
-      <path
-        fill='currentColor'
-        fill-rule='evenodd'
-        d='M7.5.875a3.625 3.625 0 0 0-1.006 7.109c-1.194.145-2.218.567-2.99 1.328c-.982.967-1.479 2.408-1.479 4.288a.475.475 0 1 0 .95 0c0-1.72.453-2.88 1.196-3.612c.744-.733 1.856-1.113 3.329-1.113s2.585.38 3.33 1.113c.742.733 1.195 1.892 1.195 3.612a.475.475 0 1 0 .95 0c0-1.88-.497-3.32-1.48-4.288c-.77-.76-1.795-1.183-2.989-1.328A3.627 3.627 0 0 0 7.5.875M4.825 4.5a2.675 2.675 0 1 1 5.35 0a2.675 2.675 0 0 1-5.35 0'
-        clip-rule='evenodd'></path>
-    </svg>
-    About Me
-  </h2>
-  <article
-    class='flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row'
-  >
-    <Image
-      width='320'
-      height='320'
-      loading='lazy'
-      class='order-1 aspect-square justify-center rounded-full object-cover md:flex border-4 size-72 border-primary md:order-2'
-      src='/author2.webp'
-      alt=''
-    />
-    <div class='md:w order-1 text-pretty md:w-5/6 [&>p]:mb-4 md:[&>p]:text-lg'>
-      <p>
-        I'm a trainee front-end developer based in Chicago. Over the past two
-        years, I've developed a solid set of skills that enable me to build
-        <strong class='text-accent'>
-          responsive, visually appealing, and user-friendly websites.
-        </strong>
-        My focus is on crafting seamless user experiences and ensuring that my code
-        is clean and efficient. I enjoy
-        <strong class='text-accent'>
-          turning design concepts into fully functional websites
-        </strong>
-        that meet both client needs and modern web standards.
-      </p>
-      <p>
-        My journey in web development started with a passion for problem-solving
-        and creativity. Throughout these time ,
-        <strong class='text-accent'>
-          I've worked on personal projects and collaborated on building free
-          websites for local stores,
-        </strong>
-        which has given me real-world experience in understanding user needs and
-        effective design principles.
-        <strong class='text-accent'>
-          I'm continuously expanding my skill set by learning new tools and
-          frameworks,
-        </strong>
-        and I'm excited to contribute to impactful projects that push my abilities
-        further. My goal is to join a dynamic team where I can grow as a developer
-        and create meaningful web experiences.
-      </p>
+<section id="about" class="py-32 ">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row items-center gap-12">
+      <div class="md:w-1/3 relative">
+        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-accent relative z-10 mx-auto">
+          <Image
+            src="/author2.webp"
+            alt="Steven Fernandez"
+            width={320}
+            height={320}
+            class="object-cover w-full h-full"
+          />
+        </div>
+        <div class="absolute inset-0 bg-accent rounded-full blur-3xl opacity-20 -z-10"></div>
+      </div>
+      <div class="md:w-2/3">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 flex items-center gap-3">
+          <span class="text-accent">About</span> Me
+        </h2>
+        <TabsAbout client:load/>
+      </div>
     </div>
-  </article>
+  </div>
 </section>
