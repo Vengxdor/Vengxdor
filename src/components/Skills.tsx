@@ -50,7 +50,7 @@ const skillsList: Skill[] = [
 export default function Skills () {
   return (
     <section
-      className='full-section mt-20 flex w-full flex-col items-center'
+      className='full-section py-20 flex w-full flex-col items-center'
       id='skills'
     >
       <h2 className='mt-4 text-[44px] font-bold'>Skills</h2>
