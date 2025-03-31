@@ -1,40 +1,29 @@
 ---
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { Image } from 'astro:assets';
+import AvailableBtn from './ui/availabe-btn.astro';
+import { Button } from './ui/button';
+import { ArrowRight } from 'lucide-react';
 ---
 
-<section id='hero' class='my-16 md:my-44 flex flex-col gap-4'>
-  <article class='flex flex-col md:flex-row gap-4'>
-    <div class='mb-7 flex min-w-[300px] justify-center md:mb-0'>
+<section id='home' class='my-16 lg:my-44 flex flex-col lg:flex-row gap-4'>
+  <article class="lg:w-1/3 relative order-first lg:order-last">
+    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-purple-500 relative z-10 mx-auto">
       <Image
-        loading='eager'
-        width={400}
-        height={400}
-        class='aspect-square size-60  animate-blurred-fade-in justify-center rounded-full object-cover md:flex border-4 md:size-72 border-secondary'
-        src='/author.webp'
-        alt='Steven Fernandez'
+        src="/author.webp"
+        alt="Steven Fernandez"
+        width={320}
+        height={320}
+        class="object-cover w-full h-full"
       />
     </div>
+    <div class="absolute inset-0 bg-purple-500 rounded-full blur-3xl opacity-20 -z-10"></div>
+  </article>
+  <article class='flex flex-col gap-8 '>
     <div class='flex flex-col justify-center'>
-      <span class='flex'>
-        <a
-          target='_blank'
-          href='https://www.linkedin.com/in/steven-fernandez-11a522274/'
-          class='relative mb-3 flex overflow-hidden rounded-full p-px focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50'
-        >
-          <span
-            class='work-border absolute inset-[-1000%] bg-[conic-gradient(from_90deg_at_50%_50%,#14532d_50%,#22c55e_100%)]'
-          ></span>
-          <span
-            class='inline-flex size-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl'
-          >
-            Avaible for work
-          </span>
-        </a>
-      </span>
-
+      <AvailableBtn />
       <h1
-        class='max-w-[24ch] animate-fade-in-down text-4xl font-bold leading-tight sm:text-5xl md:text-6xl'
+        class='max-w-[24ch] animate-fade-in-down text-4xl font-bold leading-tight text-balance sm:text-5xl md:text-6xl'
       >
         Transforming{' '}
         <span
@@ -45,9 +34,7 @@ import { Image } from 'astro:assets';
         into Engaging Websites
       </h1>
     </div>
-  </article>
-  <article class='mt-3 grid gap-8'>
-    <p class='animate-fade-in-down text-sm text-white/60 md:text-base'>
+    <p class='animate-fade-in-down text-sm text-pretty text-white/60 md:text-base'>
       Welcome! I'm
       <strong class='text-accent'>Steven Fernandez</strong>,
       a front-end developer based in Chicago.
@@ -58,31 +45,15 @@ import { Image } from 'astro:assets';
       I craft dynamic and accessible user interfaces that make websites both intuitive
       and impressive.
     </p>
-    <div class='flex items-center gap-4'>
-      <a
-        class='flex items-center gap-2 rounded-full border bg-black px-10 py-1.5 transition-all duration-200 hover:-translate-y-0.5'
-        href='mailto:fernandezsteven185@gmail.com'
-      >
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          width='1em'
-          height='1em'
-          viewBox='0 0 24 24'
-        >
-          <g
-            fill='none'
-            stroke='currentColor'
-            stroke-linecap='round'
-            stroke-linejoin='round'
-            stroke-width='2'
-          >
-            <rect width='20' height='16' x='2' y='4' rx='2'></rect>
-            <path d='m22 7l-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7'></path>
-          </g>
-        </svg>
-        Contact
-      </a>
-      <div class='flex gap-2 text-2xl'>
+      <div class="flex flex-col sm:flex-row gap-4 ">
+        <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white">
+          View My Work <ArrowRight className="ml-2 h-4 w-4" />
+        </Button>
+        <Button size="lg" variant="outline" className="border-white/20">
+          Contact Me
+        </Button>
+      </div>
+      <div class='flex gap-2 text-3xl'>
         <a
           class='opacity-60 transition-all duration-300 hover:opacity-100'
           href='https://github.com/Vengxdor'
@@ -102,6 +73,5 @@ import { Image } from 'astro:assets';
           <FaTwitter />
         </a>
       </div>
-    </div>
   </article>
 </section>
