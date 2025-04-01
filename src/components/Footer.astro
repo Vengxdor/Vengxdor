@@ -5,10 +5,31 @@ import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 <footer class="">
   <div class="container mx-auto px-4 flex justify-between items-center">
     <p class="text-gray-400">© 2025 Steven Fernandez. All rights reserved.</p>
-    <div class="flex space-x-4 *:text-xl">
-      <a href="#" class="text-gray-400 hover:text-purple-500 transition-all duration-300"><FaGithub /></a>
-      <a href="#" class="text-gray-400 hover:text-purple-500 transition-all duration-300"><FaLinkedin /></a>
-      <a href="#" class="text-gray-400 hover:text-purple-500 transition-all duration-300"><FaTwitter /></a>
+    <div class="flex space-x-4 text-2xl">
+      <a
+        target='_blank'
+        class='opacity-60 transition duration-300 hover:opacity-100'
+        href='https://github.com/Vengxdor'
+      >
+      <span class='sr-only'>Gitbub</span>
+        <FaGithub />
+      </a>
+      <a
+        target='_blank'
+        class='opacity-60 transition duration-300 hover:text-[#2476c8] hover:opacity-100'
+        href='https://www.linkedin.com/in/steven-fernandez-11a522274/'
+      >
+      <span class='sr-only'>Linkedin</span>
+        <FaLinkedin />
+      </a>
+      <a
+        target='_blank'
+        class='opacity-60 transition duration-300 hover:text-[#1ca1f1] hover:opacity-100'
+        href='https://x.com/Steven_dev2'
+      >
+      <span class='sr-only'>Twitter</span>
+        <FaTwitter />
+      </a>
     </div>
   </div>
 </footer>
