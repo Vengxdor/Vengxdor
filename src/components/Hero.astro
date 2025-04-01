@@ -1,25 +1,31 @@
 ---
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
-import { Image } from 'astro:assets';
-import AvailableBtn from './ui/availabe-btn.astro';
-import { Button } from './ui/button';
-import { ArrowRight } from 'lucide-react';
+import { Image } from 'astro:assets'
+import AvailableBtn from './ui/availabe-btn.astro'
+import { Button } from './ui/button'
+import { ArrowRight } from 'lucide-react'
+import { buttonVariants } from '@/components/ui/button'
 ---
 
 <section id='home' class='my-16 lg:my-44 flex flex-col lg:flex-row gap-4'>
-  <article class="lg:w-1/3 relative order-first lg:order-last">
-    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-purple-500 relative z-10 mx-auto">
+  <article class='lg:w-1/3 relative order-first lg:order-last'>
+    <div
+      class='w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-purple-500 relative z-10 mx-auto'
+    >
       <Image
-        src="/author.webp"
-        alt="Steven Fernandez"
+        src='/author.webp'
+        alt='Steven Fernandez'
         width={320}
         height={320}
-        class="object-cover w-full h-full"
+        class='object-cover w-full h-full'
       />
     </div>
-    <div class="absolute inset-0 bg-purple-500 rounded-full blur-3xl opacity-20 -z-10"></div>
+    <div
+      class='absolute inset-0 bg-purple-500 rounded-full blur-3xl opacity-20 -z-10'
+    >
+    </div>
   </article>
-  <article class='flex flex-col gap-8 '>
+  <article class='flex flex-col gap-8'>
     <div class='flex flex-col justify-center'>
       <AvailableBtn />
       <h1
@@ -34,44 +40,47 @@ import { ArrowRight } from 'lucide-react';
         into Engaging Websites
       </h1>
     </div>
-    <p class='animate-fade-in-down text-sm text-pretty text-white/60 md:text-base'>
+    <p
+      class='animate-fade-in-down text-sm text-pretty text-white/60 md:text-base'
+    >
       Welcome! I'm
-      <strong class='text-accent'>Steven Fernandez</strong>,
-      a front-end developer based in Chicago.
-      <strong class='text-accent'>
-        With 2 years of dedicated learning
-      </strong>
+      <strong class='text-accent'>Steven Fernandez</strong>, a front-end
+      developer based in Chicago.
+      <strong class='text-accent'> With 2 years of dedicated learning </strong>
       and hands-on projects, I have built a strong set of skills in web development.
       I craft dynamic and accessible user interfaces that make websites both intuitive
       and impressive.
     </p>
-      <div class="flex flex-col sm:flex-row gap-4 ">
-        <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white">
-          View My Work <ArrowRight className="ml-2 h-4 w-4" />
-        </Button>
-        <Button size="lg" variant="outline" className="border-white/20">
-          Contact Me
-        </Button>
-      </div>
-      <div class='flex gap-2 text-3xl'>
-        <a
-          class='opacity-60 transition duration-300 hover:opacity-100'
-          href='https://github.com/Vengxdor'
-        >
-          <FaGithub />
-        </a>
-        <a
-          class='opacity-60 transition duration-300 hover:text-[#2476c8] hover:opacity-100'
-          href='https://www.linkedin.com/in/steven-fernandez-11a522274/'
-        >
-          <FaLinkedin />
-        </a>
-        <a
-          class='opacity-60 transition duration-300 hover:text-[#1ca1f1] hover:opacity-100'
-          href='https://x.com/Steven_dev2'
-        >
-          <FaTwitter />
-        </a>
-      </div>
+    <div class='flex flex-col sm:flex-row gap-4'>
+      <a class={buttonVariants({ variant: 'default', size: 'lg' })} href='#projects'>
+        View My Work <ArrowRight className='ml-2 h-4 w-4' />
+      </a>
+      <a class={`${buttonVariants({ variant: 'outline', size: 'lg' })} py-4`} href='mailto:Stevenfernandeztango3@gmail.com'>
+        Contact Me
+      </a>
+    </div>
+    <div class='flex gap-2 text-3xl'>
+      <a
+        target='_blank'
+        class='opacity-60 transition duration-300 hover:opacity-100'
+        href='https://github.com/Vengxdor'
+      >
+        <FaGithub />
+      </a>
+      <a
+        target='_blank'
+        class='opacity-60 transition duration-300 hover:text-[#2476c8] hover:opacity-100'
+        href='https://www.linkedin.com/in/steven-fernandez-11a522274/'
+      >
+        <FaLinkedin />
+      </a>
+      <a
+        target='_blank'
+        class='opacity-60 transition duration-300 hover:text-[#1ca1f1] hover:opacity-100'
+        href='https://x.com/Steven_dev2'
+      >
+        <FaTwitter />
+      </a>
+    </div>
   </article>
 </section>
