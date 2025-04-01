@@ -1,5 +1,5 @@
 ---
-import { Button } from "./ui/button"
+import { buttonVariants } from "./ui/button"
 
 const navItems = [
   {
@@ -37,8 +37,8 @@ const navItems = [
       Contact
     </a>
   </nav>
-  <Button variant="outline" className="hidden md:flex text-accent !bg-secondary/10 !border-accent">
+  <a href='/cv.pdf' download='cv.pdf' class={`${buttonVariants({ variant: 'outline' })} hidden md:flex text-accent !bg-secondary/10 !border-accent`}>
     Resume
-  </Button>
+  </a>
   </div>
 </header>
