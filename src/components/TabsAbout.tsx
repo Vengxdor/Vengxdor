@@ -96,7 +96,7 @@ export default function TabsAbout() {
             </div>
             <div className="border-l-2 border-purple-500 pl-4 py-2">
               <h3 className="text-xl font-semibold">Personal Projects</h3>
-              <p className="text-purple-400">2022 - Present</p>
+              <p className="text-purple-400">2022 - 2023</p>
               <p className="mt-2">
                 Built various web applications to enhance my skills in React, TypeScript, and modern web
                 development practices.
