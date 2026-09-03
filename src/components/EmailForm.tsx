@@ -49,7 +49,7 @@ export default function EmailForm({ access }: { access: string }) {
               type="text"
               id="name"
               name="name"
-              className="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              className="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               placeholder="Your name"
               required
             />
@@ -62,7 +62,7 @@ export default function EmailForm({ access }: { access: string }) {
               type="email"
               id="email"
               name="email"
-              className="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              className="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               placeholder="Your email"
               required
             />
@@ -76,7 +76,7 @@ export default function EmailForm({ access }: { access: string }) {
             type="text"
             id="subject"
             name="subject"
-            className="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+            className="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             placeholder="Subject"
             required
           />
@@ -89,12 +89,12 @@ export default function EmailForm({ access }: { access: string }) {
             id="message"
             name="message"
             rows={6}
-            className="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent resize-none"
+            className="w-full px-4 py-3 bg-black/40 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
             placeholder="Your message"
             required
           ></textarea>
         </div>
-        <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white py-3">Send Message</Button>
+        <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3">Send Message</Button>
     </form>
   )
 }
