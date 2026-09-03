@@ -40,7 +40,7 @@ export default function MobileSheet() {
               <a
                 href='/cv.pdf'
                 download='cv.pdf'
-                className={`${buttonVariants({ variant: 'outline' })}  md:flex text-accent !bg-secondary/10 !border-accent`}
+                className={`${buttonVariants({ variant: 'default' })}  md:flex text-accent `}
               >
                 Resume
               </a>
