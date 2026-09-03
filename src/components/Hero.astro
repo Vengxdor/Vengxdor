@@ -1,22 +1,22 @@
 ---
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { Image } from 'astro:assets'
-import AvailableBtn from './ui/availabe-btn.astro'
 import { ArrowRight } from 'lucide-react'
 import { buttonVariants } from '@/components/ui/button'
 ---
 
 <section
   id='home'
-  class='mt-40 flex flex-col lg:flex-row gap-10 justify-between align-between'
+  class='mt-20 md:mt-40 flex flex-col lg:flex-row gap-10 justify-between align-between'
 >
-  <article class='relative order-first lg:order-last'>
+  <article
+    class='relative order-first lg:order-last animate-fade animate-duration-1000 animate-delay-200'
+  >
     <div class='relative mx-auto h-64 w-64 md:h-[360px] md:w-[360px]'>
       <div
         class='work-border absolute -inset-3 rounded-full bg-gradient-to-l from-primary to-transparent opacity-60'
       >
       </div>
-      <!-- soft glow behind the photo, matches the mockup's blurred halo -->
       <div class='absolute inset-5 rounded-full bg-primary opacity-20 blur-3xl'>
       </div>
 
@@ -36,21 +36,52 @@ import { buttonVariants } from '@/components/ui/button'
   </article>
   <article class='flex flex-col gap-8 lg:w-[50%]'>
     <div class='flex flex-col justify-center gap-4'>
-      <AvailableBtn />
+      <span class='flex'>
+        <a
+          target='_blank'
+          href='https://www.linkedin.com/in/steven-fernandez-11a522274/'
+          class='relative mb-3 flex overflow-hidden rounded-full p-px animate-fade animate-duration-500'
+        >
+          <span
+            class='inline-flex gap-2.5 cursor-pointer items-center justify-center rounded-full bg-secondary/5 px-3 py-1 text-sm text-accent backdrop-blur-3xl border'
+          >
+            <span class='h-1.5 w-1.5 bg-primary rounded-full animate-pulse'
+            ></span>
+            Available for freelance work
+          </span>
+        </a>
+      </span>
+
       <h1
-        class='font-display max-w-[24ch] animate-fade-in-down text-5xl font-normal leading-[1.05] tracking-tight text-balance md:text-7xl'
+        class='font-display text-5xl md:text-7xl leading-[1.05] tracking-tight text-balance'
       >
-        Websites that earn <span class='text-primary italic'>their keep.</span>
+        <span class='inline-block animate-fade-up animate-delay-0'
+          >Websites</span
+        >{' '}
+        <span class='inline-block animate-fade-up animate-delay-100'>that</span
+        >{' '}
+        <span class='inline-block animate-fade-up animate-delay-200'>earn</span
+        >{' '}
+        <span
+          class='inline-block animate-fade-up animate-delay-300 text-primary italic'
+          >their</span
+        >{' '}
+        <span
+          class='inline-block animate-fade-up animate-delay-500 text-primary italic'
+          >keep.</span
+        >
       </h1>
     </div>
     <p
-      class='animate-fade-in-down text-md text-pretty text-white/60 md:text-lg'
+      class='animate-fade-up animate-delay-700 text-md text-pretty text-white/60 md:text-lg'
     >
       I'm <span class='text-white/100'>Steven Fernandez</span>, a junior
       front-end developer in Chicago. I build fast, accessible sites for small
       businesses — the kind that bring in visitors and keep them there.
     </p>
-    <div class='flex flex-col sm:flex-row gap-2.5'>
+    <div
+      class='flex flex-col sm:flex-row gap-2.5 animate-fade-up animate-delay-1000'
+    >
       <a
         class={buttonVariants({ variant: 'default', size: 'lg' })}
         href='#projects'
@@ -64,7 +95,9 @@ import { buttonVariants } from '@/components/ui/button'
         Start a project
       </a>
     </div>
-    <div class='flex gap-2 text-2xl md:text-xl'>
+    <div
+      class='flex gap-2 text-2xl md:text-xl animate-fade animate-delay-1000 animate-duration-700'
+    >
       <a
         target='_blank'
         class='opacity-60 transition duration-300 hover:opacity-100'
