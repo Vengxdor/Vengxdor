@@ -2,8 +2,8 @@
 import { Badge } from './ui/badge'
 import { Card, CardContent, CardFooter, CardHeader } from './ui/card'
 import { Image } from 'astro:assets'
-import { Button, buttonVariants } from './ui/button'
-import { ArrowRight, Code, ExternalLink } from 'lucide-react'
+import { buttonVariants } from './ui/button'
+import { Code, ExternalLink } from 'lucide-react'
 
 const tech = {
   react: { name: 'React', style: 'b#005f80' },
@@ -37,25 +37,21 @@ interface Project {
   code?: string
   tech?: techConfig['tech'][]
 }
+
 const projects: Project[] = [
   {
     img: '/projects/project-fantasia.png',
     title: 'Fantasia Cafe',
     description:
-      'Designed and developed a modern, minimalist landing page for <b>Fantasia Cafe</b>, improving its <b>online presence</b> and user experience. Created a clean, <b>user-friendly</b> layout, making it easier for customers to explore the café and its offerings. <b>Attracted nearly 2,000 monthly visitors and generated over 3,900 page views</b>. Maintained a <b>45% to 35% bounce rate</b>.',
+      'A minimalist landing page that gave the café a real online presence. Now drawing <b>nearly 2,000 monthly visitors</b> and over <b>3,900 page views</b>, with bounce rate held down from 45% to 35%.',
     link: 'https://fantasiacafe.net',
     tech: ['tailwind', 'astro'],
   },
   {
     img: '/projects/project-saritas.webp',
     title: "Sarita's Flower Shop",
-    description: `Developed a website for <b>Sarita's Flower Shop</b>, integrating dynamic
-product displays, resulting in a <b>consistent 100 visitors per month</b>.
-Enhanced user experience, <b>reducing bounce rate by 49%</b> and
-<b>increasing page views by 66%</b> through intuitive navigation, faster
-load times, and mobile optimization.
-Boosted organic search visibility, leading to a <b>30% increase</b> in
-website traffic.`,
+    description:
+      'Dynamic product displays and faster loads brought a <b>49% lower bounce rate</b> and <b>66% more page views</b> — plus a <b>30% lift in organic traffic</b>.',
     link: 'https://saritasflower.vercel.app/',
     code: 'https://github.com/Vengxdor/Sarita',
     tech: ['tailwind', 'astro'],
@@ -63,38 +59,44 @@ website traffic.`,
 ]
 ---
 
-<section class='my-32' id='projects'>
-  <header>
-    <h2 class='text-[46px] font-bold text-center'>Featured Projects</h2>
-    <p class='text-center text-sm opacity-70 mt-3'>
-      Here are some of my recent projects that showcase my skills and expertise
-      in web development.
+<section class='my-32' id='projects' data-reveal>
+  <header
+    class='mb-11 flex flex-wrap items-end justify-between gap-x-10 gap-y-4'
+  >
+    <h2 class='font-display text-4xl font-normal tracking-tight md:text-5xl'>
+      Selected <span class='text-primary italic'>work</span>
+    </h2>
+    <p class='max-w-[34ch] text-sm text-muted-foreground'>
+      Real sites for real businesses, with the numbers they moved.
     </p>
   </header>
-  <ul class='mt-10 grid grid-cols-1 lg:grid-cols-2 justify-center gap-8'>
+
+  <ul class='grid grid-cols-1 justify-center gap-6 lg:grid-cols-2'>
     {
       projects.map((project) => (
         <li class='rounded-md'>
-          <Card className='bg-black/40 border border-white/10 overflow-hidden group h-full flex flex-col'>
-            <div class='relative overflow-hidden'>
+          <Card className='group flex h-full flex-col overflow-hidden border border-border bg-card transition-all duration-400 hover:-translate-y-1.5'>
+            <div class='relative overflow-hidden border-b border-border'>
               <Image
                 src={project.img}
                 alt={project.title}
                 width={600}
                 height={400}
-                class='w-full h-64 object-cover object-top transition-transform duration-500 group-hover:scale-105'
+                class='h-58 w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105'
                 loading='lazy'
               />
-              <div class='absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity' />
             </div>
             <CardHeader className='pb-2'>
-              <div class='flex flex-col justify-between gap-2'>
-                <h3 class='text-2xl font-bold'>{project.title}</h3>
-                <div class='flex gap-2 capitalize'>
+              <div class='flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1.5'>
+                <h3 class='font-display text-3xl font-normal'>
+                  {project.title}
+                </h3>
+                <div class='flex items-center gap-2 opacity-50 '>
                   {project?.tech?.map((tec) => (
-                    <Badge variant='outline' className={tech[tec].style}>
-                      {tech[tec].name}
-                    </Badge>
+                    <span class='uppercase text-xs font-medium'>
+                      {tec}
+                    </span>
+                    <span class='h-0.5 w-0.5 rounded-full bg-current last:hidden' />
                   ))}
                 </div>
               </div>
@@ -102,7 +104,7 @@ website traffic.`,
             <CardContent className='flex-grow'>
               <p
                 set:html={project.description}
-                class='text-white/70 [&>b]:text-accent line-clamp-[7]'
+                class='text-sm leading-relaxed text-muted-foreground [&>b]:font-medium [&>b]:text-primary'
               />
             </CardContent>
             <CardFooter className='flex justify-end gap-3'>
@@ -128,10 +130,4 @@ website traffic.`,
       ))
     }
   </ul>
-  <!-- *coming soon* <div class="flex justify-center mt-10">
-    <Button variant="outline" size="lg" className="border-white/20 hover:border-white/40">
-      View All Projects 
-      <ArrowRight className="ml-2 h-4 w-4" />
-    </Button>
-  </div> -->
 </section>
