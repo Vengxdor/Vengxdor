@@ -1,42 +1,76 @@
 ---
-import { BackgroundBeamsWithCollision } from '@/components/ui/background-beams-with-collision';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import { BackgroundBeamsWithCollision } from '@/components/ui/background-beams-with-collision'
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
 
 interface Props {
-	title: string;
+  title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 import Analytics from '@vercel/analytics/astro'
 ---
 
 <!doctype html>
-<html class='dark' lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="I'm Steven Fernandez, a frontend developer crafting modern, engaging web experiences. Check out my projects and contact me today!">
-		<meta name="keywords" content="Frontend Developer, UI/UX, Web Design, React, Tailwind CSS, Portfolio">
-		<meta name="author" content="Steven Fernandez">
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" href="/favicon.png" type="image/x-icon">
-		<meta property="og:title" content="Steven Fernandez | Frontend Developer">
-		<meta property="og:description" content="Check out my web development projects and technical skills.">
-		<meta property="og:image" content="https://stevenfernandez.info/author.webp">
-		<meta property="og:url" content="https://stevenfernandez.info">
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="Steven Fernandez | Frontend Developer">
-		<meta name="twitter:description" content="Check out my portfolio and projects.">
-		<meta name="twitter:image" content="https://stevenfernandez.info/author.webp">
-		<title>{title}</title>
-	</head>
-	<body>
-		<Header />
-		<div class='mx-auto w-11/12 pb-8 md:w-10/12 lg:max-w-[1000px]' id="app">
-			<BackgroundBeamsWithCollision className='fixed inset-0 -z-10 bg-background' client:load/>
-			<slot />
-			<Footer />
-		</div>
-		<Analytics />
-	</body>
+<html class='dark' lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta
+      name='description'
+      content="I'm Steven Fernandez, a frontend developer crafting modern, engaging web experiences. Check out my projects and contact me today!"
+    />
+    <meta
+      name='keywords'
+      content='Frontend Developer, UI/UX, Web Design, React, Tailwind CSS, Portfolio'
+    />
+    <meta name='author' content='Steven Fernandez' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' href='/favicon.png' type='image/x-icon' />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap'
+      rel='stylesheet'
+    />
+    <meta property='og:title' content='Steven Fernandez | Frontend Developer' />
+    <meta
+      property='og:description'
+      content='Check out my web development projects and technical skills.'
+    />
+    <meta
+      property='og:image'
+      content='https://stevenfernandez.info/author.webp'
+    />
+    <meta property='og:url' content='https://stevenfernandez.info' />
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta
+      name='twitter:title'
+      content='Steven Fernandez | Frontend Developer'
+    />
+    <meta
+      name='twitter:description'
+      content='Check out my portfolio and projects.'
+    />
+    <meta
+      name='twitter:image'
+      content='https://stevenfernandez.info/author.webp'
+    />
+    <title>{title}</title>
+  </head>
+  <body class='relative isolate'>
+    <div
+      class='pointer-events-none fixed -top-[20%] left-1/2 h-[900px] w-[900px] -translate-x-1/2 rounded-full blur-[80px] !-z-[100]'
+      style='background: radial-gradient(circle, rgba(227, 167, 101, 0.12), transparent 62%);'
+    >
+    </div>
+
+    <BackgroundBeamsWithCollision
+      className='fixed inset-0 z-0 bg-transparent pointer-events-none'
+      client:load
+    />
+    <Header />
+    <div class='mx-auto w-11/12 pb-8 md:w-10/12 lg:max-w-[1000px]' id='app'>
+      <slot />
+      <Footer />
+    </div>
+    <Analytics />
+  </body>
 </html>
