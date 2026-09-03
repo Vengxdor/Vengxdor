@@ -2,49 +2,30 @@
 import { buttonVariants } from './ui/button'
 
 import MobileSheet from './MobileSheet.tsx'
-
-const navItems = [
-  {
-    title: 'Home',
-    link: '/',
-  },
-  {
-    title: 'Projects',
-    link: '#projects',
-  },
-  {
-    title: 'Contact',
-    link: 'mailto:Fernandezsteven185@gmail.com',
-  },
-]
 ---
 
-<header class='h-24 bg-background sticky top-0 z-50 shadow-lg'>
+<header class='h-24 bg-background sticky top-0 z-50 shadow-lg border'>
   <div
     class='h-full flex justify-between items-center transition-colors duration-200 mx-auto w-11/12 md:w-10/12 lg:max-w-[1000px]'
   >
-    <a
-      href='/'
-      class='text-2xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent'
-    >
-      Steven Fernandez
-    </a>
-    <nav class='hidden md:flex items-center gap-8'>
-      <a href='#home' class='text-white/80 hover:text-white transition-colors'>
-        Home
+    <h2 class='text-3xl'>
+      <a href='/' >
+        Steven <span class='text-primary italic'>Fernandez</span>
       </a>
+    </h2>
+    <nav class='hidden md:flex items-center gap-8'>
       <a
         href='#projects'
-        class='text-white/80 hover:text-white transition-colors'
+        class='text-white/60 hover:text-white transition-colors'
       >
         Projects
       </a>
-      <a href='#about' class='text-white/80 hover:text-white transition-colors'>
+      <a href='#about' class='text-white/60 hover:text-white transition-colors'>
         About
       </a>
       <a
         href='#contact'
-        class='text-white/80 hover:text-white transition-colors'
+        class='text-white/60 hover:text-white transition-colors'
       >
         Contact
       </a>
@@ -52,7 +33,7 @@ const navItems = [
     <a
       href='/cv.pdf'
       download='cv.pdf'
-      class={`${buttonVariants({ variant: 'default' })} hidden md:flex text-accent`}
+      class={`${buttonVariants({ variant: 'default', class: 'hidden md:flex px-5 py-5 ' })} `}
     >
       Resume
     </a>
