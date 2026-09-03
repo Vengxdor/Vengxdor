@@ -44,6 +44,11 @@ html {
   }
 }
 
+::selection {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
 h1,
 h2,
 h3 {
